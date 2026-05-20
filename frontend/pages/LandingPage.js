@@ -40,8 +40,9 @@ export default {
               <h1 class="display-10 fw-bold text-dark mb-10">
                 Fair Prices for Farmers, Fresh Produce for Everyone
               </h1>
-                    <p class="lead text-muted mb-4">
-                      Kisaan Bazar is a community-driven digital marketplace that connects nearby farmers directly with consumers and fellow farmers. The platform enables farmers to sell fresh produce at fair prices without relying on sabzi mandi middlemen, while consumers gain access to fresh vegetables at lower costs. </p>
+              <p class="lead text-muted mb-4">
+                Kisaan Bazar is a community-driven digital marketplace that connects nearby farmers directly with consumers and fellow farmers. The platform enables farmers to sell fresh produce at fair prices without relying on sabzi mandi middlemen, while consumers gain access to fresh vegetables at lower costs.
+              </p>
               <div class="d-flex flex-wrap gap-3">
                 <router-link class="btn btn-success btn-lg" to="/signup-farmer">Join as Farmer</router-link>
                 <router-link class="btn btn-outline-success btn-lg" to="/buyfresh">Buy Fresh Now</router-link>
@@ -51,13 +52,10 @@ export default {
         </div>
       </section>
 
-      
-
       <section id="pricing-flow" class="py-5">
         <div class="container">
           <div class="problem-illustration p-4 rounded-4 shadow-sm mx-auto" style="max-width: 900px;">
-            
-             <div class="solution-box pt-4 border-top mt-4">
+            <div class="solution-box pt-4 border-top mt-4">
               <h5 class="text-success mb-3">Price Flow of Sabzi Mandi</h5>
               <div class="statement-list">
                 <p class="mb-0">Step 1: The farmer sells the produce at ₹20/kg.</p>
@@ -228,7 +226,7 @@ export default {
               <div class="contact-card p-4 h-100 rounded-4 shadow-sm">
                 <i class="fas fa-phone fa-2x text-success mb-3"></i>
                 <h5>Phone</h5>
-                <p class="text-muted mb-0">+91 9876543210</p>
+                <p class="text-muted mb-0">+91 0000000000</p>
               </div>
             </div>
             <div class="col-md-4 text-center">
@@ -242,7 +240,7 @@ export default {
               <div class="contact-card p-4 h-100 rounded-4 shadow-sm">
                 <i class="fas fa-map-marker-alt fa-2x text-success mb-3"></i>
                 <h5>Address</h5>
-                <p class="text-muted mb-0">123 Farm Road, Agriculture City</p>
+                <p class="text-muted mb-0">Earth</p>
               </div>
             </div>
           </div>
@@ -267,11 +265,11 @@ export default {
             </div>
             <div class="col-md-4">
               <h6 class="fw-bold">Follow Us</h6>
-              <div class="d-flex">
-                <a href="#" class="text-white me-2"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+              <div class="d-flex gap-3">
+                <a href="#" class="text-white"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-linkedin fa-lg"></i></a>
               </div>
             </div>
           </div>
@@ -281,12 +279,422 @@ export default {
       </footer>
     </div>
   `,
+
   methods: {
     goBack() {
       window.history.back();
+    },
+
+    injectStyles() {
+      // Prevent duplicate injection
+      if (document.getElementById('kisaan-bazar-styles')) return;
+
+      const style = document.createElement('style');
+      style.id = 'kisaan-bazar-styles';
+      style.textContent = `
+        /* ===== CSS Variables ===== */
+        :root {
+          --green-primary:   #2e7d32;
+          --green-light:     #4caf50;
+          --green-pale:      #e8f5e9;
+          --green-pale2:     #c8e6c9;
+          --red-pale:        #ffebee;
+          --red-border:      #ef9a9a;
+          --shadow-sm:       0 2px 8px rgba(0,0,0,.08);
+          --shadow-md:       0 4px 20px rgba(0,0,0,.12);
+          --radius:          16px;
+          --transition:      .25s ease;
+        }
+
+        /* ===== Global Reset ===== */
+        .landing-page * {
+          box-sizing: border-box;
+        }
+        .landing-page {
+          font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+          color: #1a1a1a;
+          overflow-x: hidden;
+        }
+
+        /* ===== Navbar ===== */
+        .landing-page .navbar {
+          padding: 14px 0;
+          transition: box-shadow var(--transition);
+        }
+        .landing-page .navbar-brand {
+          font-size: 1.4rem;
+          letter-spacing: -.3px;
+          gap: 8px;
+          display: flex;
+          align-items: center;
+        }
+        .landing-page .navbar-brand i {
+          font-size: 1.2rem;
+        }
+        .landing-page .nav-link {
+          font-weight: 500;
+          color: #444 !important;
+          padding: 6px 14px !important;
+          border-radius: 8px;
+          transition: color var(--transition), background var(--transition);
+        }
+        .landing-page .nav-link:hover {
+          color: var(--green-primary) !important;
+          background: var(--green-pale);
+        }
+        .landing-page .navbar-nav .btn.nav-link {
+          padding: 6px 18px !important;
+          border-radius: 50px;
+          font-weight: 600;
+        }
+
+        /* ===== Hero Section ===== */
+        .landing-page .hero-section {
+          min-height: 85vh;
+          display: flex;
+          align-items: center;
+          background: linear-gradient(135deg, #f1f8e9 0%, #ffffff 50%, #e8f5e9 100%);
+          position: relative;
+          overflow: hidden;
+        }
+        .landing-page .hero-section::before {
+          content: '';
+          position: absolute;
+          top: -80px;
+          right: -80px;
+          width: 420px;
+          height: 420px;
+          background: radial-gradient(circle, rgba(76,175,80,.18) 0%, transparent 70%);
+          border-radius: 50%;
+          pointer-events: none;
+        }
+        .landing-page .hero-section::after {
+          content: '';
+          position: absolute;
+          bottom: -60px;
+          left: -60px;
+          width: 300px;
+          height: 300px;
+          background: radial-gradient(circle, rgba(46,125,50,.12) 0%, transparent 70%);
+          border-radius: 50%;
+          pointer-events: none;
+        }
+        .landing-page .hero-content {
+          position: relative;
+          z-index: 1;
+          padding: 60px 0;
+        }
+        .landing-page .hero-section h1 {
+          font-size: clamp(2rem, 5vw, 3.2rem);
+          line-height: 1.2;
+          letter-spacing: -.5px;
+        }
+        .landing-page .hero-section .lead {
+          font-size: 1.1rem;
+          line-height: 1.75;
+          max-width: 680px;
+        }
+
+        /* ===== Pricing Flow Section ===== */
+        .landing-page .problem-illustration {
+          background: #ffffff;
+          border: 1px solid #e0e0e0;
+        }
+        .landing-page .solution-box {
+          border-color: #e8f5e9 !important;
+        }
+        .landing-page .statement-list p {
+          padding: 10px 14px;
+          background: var(--green-pale);
+          border-left: 4px solid var(--green-light);
+          border-radius: 6px;
+          margin-bottom: 8px !important;
+          font-size: .95rem;
+          color: #333;
+        }
+
+        /* ===== Features Section ===== */
+        .landing-page .features-section {
+          background: #fafafa;
+        }
+        .landing-page .features-section > .container > h2 {
+          font-size: 2rem;
+        }
+
+        /* Problem card */
+        .landing-page .problem-card {
+          background: var(--red-pale);
+          border: 1px solid var(--red-border);
+          transition: transform var(--transition), box-shadow var(--transition);
+        }
+        .landing-page .problem-card:hover {
+          transform: translateY(-4px);
+          box-shadow: var(--shadow-md);
+        }
+        .landing-page .problem-card li {
+          font-size: .95rem;
+          color: #555;
+        }
+
+        /* Solution card */
+        .landing-page .solution-card {
+          background: var(--green-pale);
+          border: 1px solid var(--green-pale2);
+          transition: transform var(--transition), box-shadow var(--transition);
+        }
+        .landing-page .solution-card:hover {
+          transform: translateY(-4px);
+          box-shadow: var(--shadow-md);
+        }
+        .landing-page .solution-card li {
+          font-size: .95rem;
+          color: #444;
+        }
+
+        /* Feature cards */
+        .landing-page .feature-card {
+          background: #ffffff;
+          border: 1px solid #e8f5e9;
+          transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+          cursor: default;
+        }
+        .landing-page .feature-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 8px 32px rgba(46,125,50,.15);
+          border-color: var(--green-light);
+        }
+        .landing-page .feature-card h4 {
+          font-weight: 700;
+          color: #1a1a1a;
+          margin-bottom: 8px;
+        }
+        .landing-page .feature-icon {
+          width: 52px;
+          height: 52px;
+          background: var(--green-pale);
+          border-radius: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.3rem;
+          color: var(--green-primary);
+          transition: background var(--transition), transform var(--transition);
+        }
+        .landing-page .feature-card:hover .feature-icon {
+          background: var(--green-light);
+          color: #fff;
+          transform: scale(1.1) rotate(-5deg);
+        }
+
+        /* ===== Benefits Section ===== */
+        .landing-page .benefits-section {
+          background: linear-gradient(180deg, #f5f5f5 0%, #f1f8e9 100%);
+        }
+        .landing-page .benefits-section h2 {
+          color: #1a1a1a;
+          font-size: 1.8rem;
+        }
+        .landing-page .benefits-list li {
+          font-size: .97rem;
+          color: #444;
+          padding: 6px 0;
+          border-bottom: 1px solid rgba(0,0,0,.05);
+          transition: color var(--transition);
+        }
+        .landing-page .benefits-list li:last-child {
+          border-bottom: none;
+        }
+        .landing-page .benefits-list li:hover {
+          color: var(--green-primary);
+        }
+        .landing-page .benefits-list .fa-check-circle {
+          font-size: 1rem;
+        }
+
+        /* ===== Stats Section ===== */
+        .landing-page .stats-section {
+          background: linear-gradient(135deg, var(--green-primary) 0%, #1b5e20 100%);
+          position: relative;
+          overflow: hidden;
+        }
+        .landing-page .stats-section::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .landing-page .stats-section .container {
+          position: relative;
+        }
+        .landing-page .stats-section h3 {
+          font-size: clamp(2.4rem, 6vw, 3.5rem);
+          font-weight: 900;
+          letter-spacing: -1px;
+          text-shadow: 0 2px 12px rgba(0,0,0,.2);
+        }
+        .landing-page .stats-section .lead {
+          font-size: .95rem;
+          opacity: .88;
+          margin-top: 4px;
+        }
+        .landing-page .stats-section .col-md-3 {
+          padding: 24px 16px;
+          border-radius: var(--radius);
+          transition: background var(--transition);
+        }
+        .landing-page .stats-section .col-md-3:hover {
+          background: rgba(255,255,255,.1);
+        }
+
+        /* ===== CTA Section ===== */
+        .landing-page .cta-section {
+          background: linear-gradient(135deg, #f1f8e9 0%, #ffffff 100%);
+          border-top: 1px solid #e8f5e9;
+          border-bottom: 1px solid #e8f5e9;
+        }
+        .landing-page .cta-section h2 {
+          font-size: 2rem;
+        }
+        .landing-page .cta-section .btn-success {
+          padding: 14px 32px;
+          border-radius: 50px;
+          font-weight: 600;
+          box-shadow: 0 4px 18px rgba(46,125,50,.3);
+          transition: transform var(--transition), box-shadow var(--transition);
+        }
+        .landing-page .cta-section .btn-success:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 28px rgba(46,125,50,.4);
+        }
+        .landing-page .cta-section .btn-outline-success {
+          padding: 14px 32px;
+          border-radius: 50px;
+          font-weight: 600;
+          transition: transform var(--transition);
+        }
+        .landing-page .cta-section .btn-outline-success:hover {
+          transform: translateY(-2px);
+        }
+
+        /* ===== Contact Section ===== */
+        .landing-page .contact-section {
+          background: #f9fbe7;
+        }
+        .landing-page .contact-card {
+          background: #ffffff;
+          border: 1px solid #e8f5e9;
+          transition: transform var(--transition), box-shadow var(--transition);
+        }
+        .landing-page .contact-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 28px rgba(46,125,50,.14);
+        }
+        .landing-page .contact-card h5 {
+          font-weight: 700;
+          margin: 10px 0 6px;
+        }
+        .landing-page .contact-card i {
+          display: block;
+        }
+
+        /* ===== Footer ===== */
+        .landing-page .footer {
+          background: #111 !important;
+        }
+        .landing-page .footer-links a {
+          color: #9e9e9e;
+          text-decoration: none;
+          font-size: .9rem;
+          display: inline-block;
+          padding: 3px 0;
+          transition: color var(--transition);
+        }
+        .landing-page .footer-links a:hover {
+          color: var(--green-light);
+        }
+        .landing-page .footer .d-flex a {
+          transition: color var(--transition), transform var(--transition);
+          display: inline-block;
+        }
+        .landing-page .footer .d-flex a:hover {
+          color: var(--green-light) !important;
+          transform: translateY(-3px);
+        }
+        .landing-page .footer hr {
+          border-color: #333 !important;
+          opacity: 1;
+        }
+
+        /* ===== Buttons (global overrides) ===== */
+        .landing-page .btn-success {
+          background-color: var(--green-primary);
+          border-color: var(--green-primary);
+        }
+        .landing-page .btn-success:hover {
+          background-color: #1b5e20;
+          border-color: #1b5e20;
+        }
+        .landing-page .btn-outline-success {
+          color: var(--green-primary);
+          border-color: var(--green-primary);
+        }
+        .landing-page .btn-outline-success:hover {
+          background-color: var(--green-primary);
+          border-color: var(--green-primary);
+          color: #fff;
+        }
+
+        /* ===== Scrollbar ===== */
+        .landing-page ::-webkit-scrollbar {
+          width: 6px;
+        }
+        .landing-page ::-webkit-scrollbar-track {
+          background: #f5f5f5;
+        }
+        .landing-page ::-webkit-scrollbar-thumb {
+          background: var(--green-pale2);
+          border-radius: 99px;
+        }
+        .landing-page ::-webkit-scrollbar-thumb:hover {
+          background: var(--green-light);
+        }
+
+        /* ===== Smooth Scroll ===== */
+        html {
+          scroll-behavior: smooth;
+        }
+
+        /* ===== Responsive tweaks ===== */
+        @media (max-width: 768px) {
+          .landing-page .hero-section {
+            min-height: auto;
+            padding-bottom: 40px;
+          }
+          .landing-page .hero-content {
+            padding: 40px 0 20px;
+          }
+          .landing-page .stats-section h3 {
+            font-size: 2rem;
+          }
+          .landing-page .cta-section h2 {
+            font-size: 1.5rem;
+          }
+          .landing-page .feature-card,
+          .landing-page .contact-card {
+            margin-bottom: 4px;
+          }
+        }
+      `;
+
+      document.head.appendChild(style);
     }
   },
+
   mounted() {
+    // Inject component styles
+    this.injectStyles();
+
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -296,5 +704,11 @@ export default {
         }
       });
     });
+  },
+
+  beforeUnmount() {
+    // Clean up injected styles when component is destroyed
+    const style = document.getElementById('kisaan-bazar-styles');
+    if (style) style.remove();
   }
 };
