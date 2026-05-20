@@ -21,8 +21,7 @@ export default {
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-              <li class="nav-item"><a class="nav-link" href="#benefits">Benefits</a></li>
+           
               <li class="nav-item"><router-link class="nav-link" to="/login">Login</router-link></li>
               <li class="nav-item"><router-link class="nav-link btn btn-success text-white ms-2" to="/signup">Join as customer</router-link></li>
             </ul>
