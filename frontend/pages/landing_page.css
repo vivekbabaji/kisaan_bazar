@@ -1,0 +1,69 @@
+/* Minimal custom styling; Bootstrap handles the majority of the layout and look. */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  padding-top: 80px; /* ensure fixed navbar does not cover content */
+}
+
+.landing-page {
+  overflow-x: hidden;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #f8fbf8 0%, #e7f0e7 100%);
+}
+
+.hero-section h1 {
+  color: #1f3f2f;
+}
+
+.hero-section .btn {
+  min-width: 180px;
+}
+
+.problem-illustration .badge {
+  min-width: 130px;
+  font-size: 0.95rem;
+}
+
+.problem-illustration .card {
+  border-radius: 1rem;
+}
+
+.stats-section {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer .social-links a {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #28a745;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.footer .social-links a:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    padding-top: 100px;
+  }
+}
