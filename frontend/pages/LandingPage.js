@@ -2,32 +2,19 @@ export default {
   name: 'LandingPage',
   template: `
     <div class="landing-page">
-      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
-        <div class="container">
-          <a class="navbar-brand fw-bold text-success" href="#home">
-            <i class="fas fa-seedling"></i>
-            Kisaan Bazar
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-           
-              <li class="nav-item"><router-link class="nav-link" to="/login">Login</router-link></li>
-              <li class="nav-item"><router-link class="nav-link btn btn-success text-white ms-2" to="/signup">Join as customer</router-link></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-success" href="#home">
+      <i class="fas fa-seedling"></i>
+      Kisaan Bazar
+    </a>
+
+    <div class="d-flex ms-auto gap-2">
+      <router-link class="btn btn-outline-success btn-sm" to="/login">Login</router-link>
+      <router-link class="btn btn-success btn-sm" to="/signup">Join as Customer</router-link>
+    </div>
+  </div>
+</nav>
 
       <section id="home" class="hero-section pt-5 mt-5">
         <div class="container hero-content">
