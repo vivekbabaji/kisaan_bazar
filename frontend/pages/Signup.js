@@ -40,7 +40,7 @@ export default {
     </div>
   `,
   data() {
-    return { name: '', email: '', password: '', message: '', success: false };
+    return { name: '', email: '', password: '', message: '', success: true };
   },
   methods: {
     goBack() {

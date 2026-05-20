@@ -192,7 +192,7 @@ def create_vegetable():
 @routes.route('/signup', methods=['POST'])
 def signup():
     data = request.get_json() or {}
-    role = data.get('role', 'customer')
+    role = data.get('role')
     name = data.get('name')
     email = data.get('email')
     password = data.get('password')
